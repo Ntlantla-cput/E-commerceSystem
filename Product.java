@@ -2,14 +2,12 @@ package za.ac.cput.domain;
 
 public class Product {
 
-    private final String productId;
-    private final String productName;
-    private final double price;
+    private String productId;
+    private  String productName;
+    private double price;
 
-    public Product() {
-        this.productId = "";
-        this.productName = "";
-        this.price = 0.0;
+    private Product() {
+
     }
 
     private Product(Builder builder) {
