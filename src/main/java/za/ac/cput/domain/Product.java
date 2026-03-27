@@ -1,0 +1,64 @@
+package za.ac.cput.domain;
+
+import java.util.Objects;
+
+/**
+ * Product.java
+ * Product model class using Builder Pattern
+ * Author: Sinentlantla Slayi (222133872)
+ * Date: 27 March 2026
+ */
+public class Product {
+    private String productId;
+    private String productName;
+    private double price;
+
+    private Product() {}
+
+    private Product(Builder builder) {
+        this.productId = builder.productId;
+        this.productName = builder.productName;
+        this.price = builder.price;
+    }
+
+    public String getProductId() { return productId; }
+    public String getProductName() { return productName; }
+    public double getPrice() { return price; }
+
+    public static class Builder {
+        private String productId;
+        private String productName;
+        private double price;
+
+        public Builder setProductId(String productId) {
+            this.productId = productId;
+            return this;
+        }
+
+        public Builder setProductName(String productName) {
+            this.productName = productName;
+            return this;
+        }
+
+        public Builder setPrice(double price) {
+            this.price = price;
+            return this;
+        }
+
+        public Builder copy(Product product) {
+            this.productId = product.productId;
+            this.productName = product.productName;
+            this.price = product.price;
+            return this;
+        }
+
+        public Product build() {
+            return new Product(this);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "productId='" + productId + '\'' + ", productName='" + productName + '\'' + ", price=" + price + '}';
+    }
+}
