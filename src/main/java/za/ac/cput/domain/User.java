@@ -1,3 +1,4 @@
+
 /*
 Aneeqah Talaaboedien
 Student number 219099405
@@ -6,15 +7,16 @@ March 2026
 
 package za.ac.cput.domain;
 
-public class User {
+public  class User {
     private String userId;
     private String userName;
     private String email;
     private String password;
 
-
+    //default constructor
     private User(){}
 
+    //constructor with builder
     private User(Builder builder){
         this.userId= builder.userId;
         this.userName = builder.userName;
@@ -25,10 +27,13 @@ public class User {
     public String getUserId() {
         return userId;
     }
+
     public String getUserName() {
         return userName;
     }
+
     public String getEmail() {return email;}
+
     public String getPassword() {
         return password;
     }
@@ -42,7 +47,6 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
-
     public static class Builder {
         private String userId;
         private String userName;
@@ -69,4 +73,5 @@ public class User {
         }
         public User build() { return new User(this);}
     }
+
 }
